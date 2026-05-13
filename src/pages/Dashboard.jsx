@@ -12,7 +12,7 @@ import {
   TrendingUp,
   Search
 } from 'lucide-react';
-import { stats } from '../data/mockData';
+import { stats, students } from '../data/mockData';
 
 const Dashboard = ({ setActiveTab }) => {
   const containerVariants = {
