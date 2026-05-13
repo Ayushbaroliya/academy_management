@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { User, Settings, Shield, Bell, LogOut, ChevronRight, Award, MapPin } from 'lucide-react';
+import { cn } from '../lib/utils';
 
 const Profile = ({ onLogout }) => {
   return (
@@ -67,8 +68,5 @@ const Profile = ({ onLogout }) => {
     </div>
   );
 };
-
-// Re-using cn
-const cn = (...inputs) => inputs.filter(Boolean).join(' ');
 
 export default Profile;

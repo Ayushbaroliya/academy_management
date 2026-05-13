@@ -68,6 +68,104 @@ export const students = [
     dob: "1997-10-04",
     mobile: "5432109876",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rishabh"
+  },
+  {
+    id: 6,
+    name: "KL Rahul",
+    coach: "Samuel Jayaraj",
+    feeStatus: "Due",
+    type: "Local",
+    joiningDate: "2024-02-12",
+    attendance: 78,
+    kitIssued: true,
+    lastPayment: "2026-04-15",
+    dob: "1992-04-18",
+    mobile: "4321098765",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"
+  },
+  {
+    id: 7,
+    name: "Hardik Pandya",
+    coach: "Kiran More",
+    feeStatus: "Paid",
+    type: "Hosteler",
+    joiningDate: "2023-08-20",
+    attendance: 82,
+    kitIssued: true,
+    lastPayment: "2026-05-08",
+    dob: "1993-10-11",
+    mobile: "3210987654",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Hardik"
+  },
+  {
+    id: 8,
+    name: "Suryakumar Yadav",
+    coach: "Vinayak Mane",
+    feeStatus: "Paid",
+    type: "Local",
+    joiningDate: "2024-03-01",
+    attendance: 94,
+    kitIssued: false,
+    lastPayment: "2026-05-02",
+    dob: "1990-09-14",
+    mobile: "2109876543",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Surya"
+  },
+  {
+    id: 9,
+    name: "Ravindra Jadeja",
+    coach: "Debu Mitra",
+    feeStatus: "Paid",
+    type: "Local",
+    joiningDate: "2023-02-14",
+    attendance: 99,
+    kitIssued: true,
+    lastPayment: "2026-05-12",
+    dob: "1988-12-06",
+    mobile: "1098765432",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jadeja"
+  },
+  {
+    id: 10,
+    name: "Mohammed Shami",
+    coach: "Badruddin Siddiqui",
+    feeStatus: "Due",
+    type: "Hosteler",
+    joiningDate: "2023-07-25",
+    attendance: 72,
+    kitIssued: true,
+    lastPayment: "2026-03-10",
+    dob: "1990-09-03",
+    mobile: "0987654321",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Shami"
+  },
+  {
+    id: 11,
+    name: "Ishan Kishan",
+    coach: "Uttam Mazumdar",
+    feeStatus: "Paid",
+    type: "Local",
+    joiningDate: "2024-01-05",
+    attendance: 91,
+    kitIssued: true,
+    lastPayment: "2026-05-11",
+    dob: "1998-07-18",
+    mobile: "9812345678",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ishan"
+  },
+  {
+    id: 12,
+    name: "Yashasvi Jaiswal",
+    coach: "Jwalamani Singh",
+    feeStatus: "Due",
+    type: "Hosteler",
+    joiningDate: "2024-04-10",
+    attendance: 96,
+    kitIssued: false,
+    lastPayment: "2026-04-10",
+    dob: "2001-12-28",
+    mobile: "8712345678",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Yashasvi"
   }
 ];
 
@@ -84,5 +182,10 @@ export const coaches = [
   "Dinesh Lad",
   "Karsan Ghavri",
   "Bharat Arun",
-  "Tarak Sinha"
+  "Tarak Sinha",
+  "Samuel Jayaraj",
+  "Kiran More",
+  "Vinayak Mane",
+  "Debu Mitra",
+  "Badruddin Siddiqui"
 ];

@@ -51,7 +51,7 @@ function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <Dashboard />;
+        return <Dashboard setActiveTab={setActiveTab} />;
       case 'students':
         return <Students onSelectStudent={setSelectedStudent} />;
       case 'attendance':
