@@ -27,30 +27,30 @@ const Students = ({ onSelectStudent }) => {
   });
 
   return (
-    <div className="pb-32 pt-8 px-6 h-full flex flex-col">
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-white mb-4">Student Directory</h1>
+    <div className="pb-32 pt-6 px-4 md:px-6 h-full flex flex-col overflow-hidden">
+      <header className="mb-4 md:mb-6">
+        <h1 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Student Directory</h1>
         
         {/* Search Bar */}
-        <div className="relative mb-6">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+        <div className="relative mb-4 md:mb-6">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
           <input 
             type="text" 
-            placeholder="Search by Name, DOB or Mobile..."
+            placeholder="Search Name, DOB or Mobile..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-navy-800 border border-white/5 rounded-2xl py-3.5 pl-12 pr-4 text-white focus:outline-none focus:border-accent/50 transition-colors"
+            className="w-full bg-navy-800 border border-white/5 rounded-2xl py-3 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-accent/50 transition-colors placeholder:text-gray-600"
           />
         </div>
 
         {/* Filters */}
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide -mx-1 px-1">
           {filters.map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
               className={cn(
-                "px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all",
+                "px-4 py-2 rounded-full text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all",
                 filter === f 
                   ? "bg-amber-500 text-white shadow-md scale-105" 
                   : "bg-navy-800 text-gray-400 border border-white/5"
@@ -63,46 +63,46 @@ const Students = ({ onSelectStudent }) => {
       </header>
 
       {/* Student List */}
-      <div className="flex-1 overflow-y-auto space-y-4 pr-1">
+      <div className="flex-1 overflow-y-auto space-y-3 pr-1 scroll-smooth">
         <AnimatePresence mode='popLayout'>
           {filteredStudents.map((student) => (
             <motion.div
               layout
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               key={student.id}
               onClick={() => onSelectStudent(student)}
-              className="glass p-4 rounded-3xl flex items-center gap-4 active:scale-[0.98] transition-transform cursor-pointer"
+              className="glass p-3 md:p-4 rounded-2xl md:rounded-3xl flex items-center gap-3 md:gap-4 active:scale-[0.98] transition-transform cursor-pointer"
             >
-              <div className="relative">
-                <div className="w-14 h-14 rounded-2xl bg-navy-800 border border-white/10 overflow-hidden">
-                  <img src={student.avatar} alt={student.name} />
+              <div className="relative flex-shrink-0">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-navy-800 border border-white/10 overflow-hidden">
+                  <img src={student.avatar} alt={student.name} className="w-full h-full object-cover" />
                 </div>
                 <div className={cn(
-                  "absolute -bottom-1 -right-1 w-5 h-5 rounded-full border-2 border-navy-900 flex items-center justify-center",
+                  "absolute -bottom-1 -right-1 w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-navy-900 flex items-center justify-center",
                   student.feeStatus === 'Paid' ? 'bg-accent text-navy-900' : 'bg-amber-500 text-navy-900'
                 )}>
-                  <CreditCard size={10} />
+                  <CreditCard size={8} md={10} />
                 </div>
               </div>
 
-              <div className="flex-1">
-                <h3 className="text-white font-bold text-base">{student.name}</h3>
-                <p className="text-[10px] text-gray-500 mb-1">{student.mobile || 'No Mobile'}</p>
-                <div className="flex items-center gap-3 mt-1">
-                  <div className="flex items-center gap-1 text-[10px] text-gray-500">
-                    <UserCircle size={12} className="text-accent" />
-                    <span>{student.coach}</span>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-white font-bold text-sm md:text-base truncate">{student.name}</h3>
+                <p className="text-[9px] md:text-[10px] text-gray-500 mb-1">{student.mobile || 'No Mobile'}</p>
+                <div className="flex items-center gap-2 md:gap-3 mt-0.5">
+                  <div className="flex items-center gap-1 text-[9px] md:text-[10px] text-gray-400">
+                    <UserCircle size={10} md={12} className="text-accent" />
+                    <span className="truncate max-w-[60px] md:max-w-none">{student.coach}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-[10px] text-gray-500">
-                    {student.type === 'Hosteler' ? <Home size={12} /> : <MapPin size={12} />}
+                  <div className="flex items-center gap-1 text-[9px] md:text-[10px] text-gray-400">
+                    {student.type === 'Hosteler' ? <Home size={10} md={12} /> : <MapPin size={10} md={12} />}
                     <span>{student.type}</span>
                   </div>
                 </div>
               </div>
 
-              <ChevronRight className="text-gray-600" size={20} />
+              <ChevronRight className="text-gray-700 flex-shrink-0" size={18} />
             </motion.div>
           ))}
         </AnimatePresence>

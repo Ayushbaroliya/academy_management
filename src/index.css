@@ -20,9 +20,11 @@
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
-  overflow-x: hidden;
+  min-height: 100dvh;
+  overflow: hidden;
   background: #0F172A;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* Glassmorphism Classes */
@@ -67,7 +69,13 @@ body {
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 0.75rem;
+}
+
+@media (max-width: 360px) {
+  .bento-grid {
+    gap: 0.5rem;
+  }
 }
 
 .bento-item-large {
@@ -77,9 +85,11 @@ body {
 /* Mobile Fullscreen "Force" */
 html, body {
   overscroll-behavior: none;
-  height: 100%;
+  height: 100dvh;
 }
 
 #root {
-  height: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }

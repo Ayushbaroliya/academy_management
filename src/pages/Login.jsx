@@ -26,40 +26,40 @@ const Login = ({ onLogin }) => {
           <p className="text-gray-400 mt-1">Academy Management System</p>
         </div>
 
-        <div className="glass p-8 rounded-[2.5rem] shadow-2xl">
-          <h2 className="text-xl font-semibold text-white mb-6 text-center">Welcome Back</h2>
+        <div className="glass p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl">
+          <h2 className="text-lg md:text-xl font-semibold text-white mb-6 text-center">Welcome Back</h2>
           
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
             <div className="relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
               <input 
                 type="email" 
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-navy-800 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent/50 transition-colors"
+                className="w-full bg-navy-800 border border-white/5 rounded-2xl py-3.5 md:py-4 pl-12 pr-4 text-sm text-white focus:outline-none focus:border-accent/50 transition-colors"
                 required
               />
             </div>
 
             <div className="relative">
-              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
               <input 
                 type="password" 
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-navy-800 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent/50 transition-colors"
+                className="w-full bg-navy-800 border border-white/5 rounded-2xl py-3.5 md:py-4 pl-12 pr-4 text-sm text-white focus:outline-none focus:border-accent/50 transition-colors"
                 required
               />
             </div>
 
             <button 
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg mt-2"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 md:py-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg mt-2 text-sm md:text-base"
             >
               Sign In
-              <ChevronRight size={20} />
+              <ChevronRight size={18} />
             </button>
           </form>
 
